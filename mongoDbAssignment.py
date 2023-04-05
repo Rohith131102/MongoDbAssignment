@@ -41,7 +41,8 @@ class createDatabaseCollections():
         # Import data using MongoDB shell command
         subprocess.run(["mongoimport", "--db", dbName, "--collection", collectionNames[3], "--file", json_file_path])
 
-
+def insert_record_dict(collection,data_dict:dict):
+       collection.insert_one(data_dict)
 
 def top10UserWithMaxComment():
         pipeline=[
